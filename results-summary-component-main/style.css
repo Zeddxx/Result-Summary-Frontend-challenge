@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+:root{
+    --bg-white:hsl(0, 0%, 100%);
+    --bg-pb:hsl(221, 100%, 96%);
+    --primary-fc-light:hsl(241, 100%, 89%);
+    --fc-numbers:hsl(224, 30%, 27%);
+
+    /* gradiants */
+    --ls-blue:hsl(252, 100%, 67%);
+    --lr-blue:hsl(241, 81%, 54%);
+
+    /* Circle Gradiants */
+    --top-gc:hsla(256, 72%, 46%, 1);
+    --bottom-gc:hsla(241, 72%, 46%, 0);
+
+    /* Summary Colors */
+    --reaction-bg:hsl(0, 100%, 67%);
+    --memory-bg:hsl(39, 100%, 56%);
+    --verbal-bg:hsl(166, 100%, 37%);
+    --visual-bg:hsl(234, 85%, 45%);
+
+    /* Fonts Weights */
+    --large-fw:800;
+    --medium-fw:700;
+    --light-fw:500;
+}
+/* css resets */
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.main-container{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    background: var(--bg-white);
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    background:#fff;
+    height: 450px;
+    width: 720px;
+    border-radius: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+    box-shadow: 9px 12px 39px hsla(241, 100%, 89%, 0.354);
+}
+.result-container{
+    background: linear-gradient(var(--ls-blue), var(--lr-blue));
+    height: 100%;
+    width: 50%;
+    border-radius: 24px;
+    padding: 24px 48px;
+}
+.result-contents{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    /* justify-content: center; */
+}
+.heading-result{
+    font-size: 1.3rem;
+    font-weight: var(--light-fw);
+    color: var(--primary-fc-light);
+}
+
+.circle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 170px;
+    gap: .77rem;
+    border-radius: 50%;
+    background: linear-gradient(var(--top-gc), var(--bottom-gc));
+}
+.circle .out-of{
+    color: hsla(241, 100%, 89%, 0.542);
+}
+.result{
+    font-size: 3.8rem;
+    line-height: 44px;
+    color: #fff;
+    font-weight: var(--large-fw);
+}
+.main-result-content{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+.title{
+    color: #fff;
+    font-weight: var(--medium-fw);
+    font-size: 1.7rem;
+    width: 100%;
+    text-align: center;
+}
+.para{
+    color: var(--primary-fc-light);
+    text-align: center;
+}
+/* summary-container */
+
+.summary-container{
+    padding: 24px 33px;
+    background: #fff;
+    display: flex;
+    height: 100%;
+    gap: 2rem;
+    flex-direction: column;
+    width: 50%;
+}
+.summary-container h1{
+    color: var(--fc-numbers);
+    font-weight: var(--medium-fw);
+}
+.summary-flex-box{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    width: 100%;
+}
+.padding{
+    padding: 14px 14px;
+    border-radius: 8px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.flex{
+    display: flex;
+    font-size: 1.1rem;
+    align-items: center;
+    gap: .5rem;
+    font-weight: var(--light-fw);
+}
+.reaction-div{
+    background: hsla(0, 100%, 67%, 0.091);
+}
+.reaction{ 
+    color: var(--reaction-bg);
+}
+.memory-div{
+    background: hsla(39, 100%, 56%, 0.091)
+}
+.memory{
+    color: var(--memory-bg);
+}
+.visual-div{
+    background: hsla(234, 85%, 45%, 0.091);
+}
+.visual{
+    color: var(--visual-bg);
+}
+.verbal-div{
+    background: hsla(166, 100%, 37%, 0.091);
+}
+.verbal{
+    color: var(--verbal-bg);
+}
+.reaction-count{
+    color: hsla(224, 30%, 27%, 0.62);
+    font-weight: var(--large-fw);
+    font-size: 1.1rem;
+}
+.reaction-count span{
+    color: var(--fc-numbers);
+}
+.continue{
+    /* background: hsl(224, 30%, 27%); */
+    background: linear-gradient(hsl(224, 30%, 27%),hsl(224, 30%, 27%));
+    padding: 14px;
+    color: #fff;
+    border: none;
+    border-radius: 26px;
+    font-weight: var(--light-fw);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 1s linear;
+}
+.continue:hover{
+    background: linear-gradient(var(--ls-blue), var(--lr-blue));
+}
+
+@media (width <= 720px){
+    .container{
+        border-radius: 0 0 24px 24px;
+        place-items: center;
+        padding: 0;
+        width: inherit;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .result-container{
+        width: 100%;
+        border-radius: 0 0 24px 24px;
+    }
+    .summary-container{
+        width: 100%;
+    }
+}
